@@ -1,0 +1,4 @@
+Form closure for image 1: True 
+k: [2. 1. 2. 1.]
+
+Form closure for image 2: False
