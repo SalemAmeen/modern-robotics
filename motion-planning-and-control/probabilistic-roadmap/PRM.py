@@ -76,7 +76,7 @@ start = [-0.5,-0.5]
 goal = [0.5,0.5]
 
 # Get obstacles from csv file
-obstacles = np.loadtxt(r'C:\Users\Summi\Documents\modern-robotics\motion-planning-and-control\probabilistic-roadmap\results\obstacles.csv',delimiter=',')
+obstacles = np.loadtxt('./results/obstacles.csv',delimiter=',')
 
 # Empty lists for nodes and edges
 nodes = []
@@ -101,9 +101,9 @@ for i in range(N):
         node_id += 1
 
 # Create writers for csv files
-f1 = open(r'C:\Users\Summi\Documents\modern-robotics\motion-planning-and-control\probabilistic-roadmap\results\nodes.csv', 'w', newline='')
+f1 = open('./results/nodes.csv', 'w', newline='')
 writer1 = csv.writer(f1)
-f2 = open(r'C:\Users\Summi\Documents\modern-robotics\motion-planning-and-control\probabilistic-roadmap\results\edges.csv', 'w', newline='')
+f2 = open('./results/edges.csv', 'w', newline='')
 writer2 = csv.writer(f2)
 
 # Save nodes in csv file

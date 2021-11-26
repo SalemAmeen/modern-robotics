@@ -3,8 +3,8 @@ import numpy as np
 import csv
 
 # Get nodes and edges from csv files
-nodes = np.loadtxt(r'C:\Users\Summi\Documents\modern-robotics\motion-planning-and-control\probabilistic-roadmap\results\nodes.csv',delimiter=',')
-edges = np.loadtxt(r'C:\Users\Summi\Documents\modern-robotics\motion-planning-and-control\probabilistic-roadmap\results\edges.csv',delimiter=',')
+nodes = np.loadtxt('./results/nodes.csv',delimiter=',')
+edges = np.loadtxt('./results/edges.csv',delimiter=',')
 
 # Function to find adjacent nodes and edge costs
 def adj_nodes(edges, current_node):
@@ -100,7 +100,7 @@ def a_star_search(nodes,edges):
         route_current = int(parent_nodes[route_current-1])
     
     # Create csv file in write mode
-    f = open(r'C:\Users\Summi\Documents\modern-robotics\motion-planning-and-control\probabilistic-roadmap\results\path.csv', 'w', newline='')
+    f = open('./results/path.csv', 'w', newline='')
     writer = csv.writer(f)
     # Add route to csv
     writer.writerow(route)
