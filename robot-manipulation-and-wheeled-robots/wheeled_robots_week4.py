@@ -63,7 +63,10 @@ J_rightwheel = J_base[2:5,1]
 print("\nProblem 6:", np.array2string(np.around(J_rightwheel,2), separator=','))
 
 # Problem 7
-Blist = np.array([0,0,1,-3,0,0])
+omega = np.array([0,0,1])
+q = np.array([-3,0,0])
+v = np.cross(-omega,q)
+Blist = np.concatenate((omega,v), axis=0)
 thetalist = np.array([np.pi/2])
 J_arm = mr.JacobianBody(Blist,thetalist)
-print("\nProblem 7:", np.array2string(np.around(J_arm,2), separator=','))
+print("\nProblem 7:", np.array2string(np.around(J_arm[2:5],2), separator=','))
