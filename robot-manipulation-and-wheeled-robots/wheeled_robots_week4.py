@@ -13,9 +13,9 @@ def H_matrix(y, r_i, B_i, x_i, y_i, phi):
     m3 = np.array([[-y_i,1,0],[x_i,0,1]])
     m4 = np.array([[1,0,0],[0,np.cos(phi),np.sin(phi)],[0,-np.sin(phi), np.cos(phi)]])
 
-    H = m1 @ m2 @ m3 @ m4
+    H_i = m1 @ m2 @ m3 @ m4
     
-    return H
+    return H_i
 
 H = np.ones((4,3))
 l,w = 3,2
@@ -29,8 +29,6 @@ h3 = H_matrix(-np.pi/4,1,0,-l,-w,0)
 H[2,:] = h3[0]
 h4 = H_matrix(np.pi/4,1,0,-l,w,0)
 H[3,:] = h4[0]
-
-#print("\nH matrix:\n", H)
 
 # Problem 4
 u = np.array([-1.18,0.68,0.02,-0.52]).T
